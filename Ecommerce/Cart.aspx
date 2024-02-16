@@ -20,7 +20,7 @@
     </div>
 
     <div class="text-right">
-        <h4>Totale: €<span runat="server" id="totalAmountLabel"></span></h4>
+        <h4>Totale: <span runat="server" id="totalAmountLabel"></span> €</h4>
         <asp:Label runat="server" ID="emptyCartMessage" Visible="false" Text="Il carrello è vuoto." CssClass="text-danger"></asp:Label>
         <asp:Button runat="server" ID="EmptyCartButton" Text="Svuota Carrello" CssClass="btn btn-danger" OnClick="EmptyCartButton_Click" />
     </div>

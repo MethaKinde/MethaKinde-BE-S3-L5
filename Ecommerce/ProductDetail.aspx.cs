@@ -12,60 +12,45 @@ namespace Ecommerce
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            InitializeCartSession();
-
             if (!IsPostBack)
             {
-                LoadProductDetails();
-            }
-        }
-
-        private void InitializeCartSession()
-        {
-            if (Session["Cart"] == null)
-            {
-                Session["Cart"] = new List<Product>();
-            }
-        }
-
-        private void LoadProductDetails()
-        {
-            try
-            {
-                string productId = Request.QueryString["ProductId"];
-
-                List<Product> products = Session["Cart"] as List<Product>;
-
-                Product selectedProduct = products.FirstOrDefault(p => p.ProductID == productId);
-
-                if (selectedProduct != null)
+                // Controlla se è stato fornito un ProductId nei parametri della richiesta
+                if (Request.QueryString["ProductId"] != null)
                 {
-                    string imagePath = selectedProduct.ImagePath;
-                    Console.WriteLine("Percorso immagine: " + imagePath);
-                    ImagePath.ImageUrl = imagePath;
+                    string productId = Request.QueryString["ProductId"];
 
-                    NameLabel.Text = selectedProduct.Name;
-                    PriceLabel.Text = "Prezzo: €" + selectedProduct.Price.ToString();
-                    ExtendedDescriptionLabel.Text = selectedProduct.Description;
-                }
-                else
-                {
-                    Response.Redirect("ErrorPage.aspx");
+                    // Ottieni il prodotto corrispondente dal database o da una lista di prodotti
+                    // In questo caso, useremo la stessa lista di prodotti usata in Index.aspx.cs per semplicità
+
+                    List<Index.Product> products = GetProducts();
+                    Index.Product selectedProduct = products.FirstOrDefault(p => p.ProductID == productId);
+
+                    if (selectedProduct != null)
+                    {
+                        // Visualizza i dettagli del prodotto
+                        ProductNameLabel.Text = selectedProduct.Name;
+                        ProductImage.ImageUrl = selectedProduct.ImagePath;
+                        ProductDescriptionLabel.Text = selectedProduct.Description;
+                        ProductPriceLabel.Text = "Prezzo: " + selectedProduct.Price.ToString("C"); // Formatta il prezzo come valuta
+                    }
                 }
             }
-            catch (Exception ex)
-            {
-                // Aggiungi eventuali dettagli dell'errore all'output della console o al log degli errori
-                Console.WriteLine("Errore durante il caricamento dei dettagli del prodotto: " + ex.Message);
-                // Puoi aggiungere ulteriori azioni per gestire l'errore, ad esempio reindirizzare a una pagina di errore specifica
-                Response.Redirect("ErrorPage.aspx");
-            }
         }
 
-        protected void AddToCartButton_Click(object sender, EventArgs e)
+        // Metodo di esempio per ottenere la lista dei prodotti (puoi modificare questo metodo in base alla tua logica)
+        private List<Index.Product> GetProducts()
         {
-            // Implementa qui la logica per aggiungere il prodotto al carrello, se necessario
-            // Puoi utilizzare lo stesso metodo AddProductToCart() che hai nel file Index.aspx.cs
+            List<Index.Product> products = new List<Index.Product>
+            {
+                new Index.Product { ProductID = "1", ImagePath = ResolveUrl("~/images/image1.jpg"), Name = "FC Barcelona HOME 70", Description = "Maglia vintage degli anni 70", Price = 300.00m },
+                new Index.Product { ProductID = "2", ImagePath = ResolveUrl("~/images/image2.jpg"), Name = "AS Roma HOME 2001", Description = "Storica maglia A.S. Roma stagione 2001", Price = 200.00m },
+                new Index.Product { ProductID = "3",  ImagePath = ResolveUrl("~/images/image3.jpg"), Name = "Italia FirstKit WordCup", Description = "Maglia vintage del mondiale 1982", Price = 250.00m },
+                new Index.Product { ProductID = "4", ImagePath = ResolveUrl("~/images/image4.jpg"), Name = "Olanda FirstKit WordCup", Description = "Maglia vintage del mondiale 1978", Price = 350.00m },
+                new Index.Product { ProductID = "5", ImagePath = ResolveUrl("~/images/image5.jpg"), Name = "FC Inter HOME 20-21", Description = "Prima maglia Inter stagione 20/21", Price = 130.00m },
+                new Index.Product { ProductID = "6", ImagePath = ResolveUrl("~/images/image6.jpg"), Name = "FC Juventus HOME 84-85", Description = "Prima maglia Juventus stagione 84/85", Price = 100.00m },
+            };
+
+            return products;
         }
     }
 }
