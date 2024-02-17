@@ -37,6 +37,27 @@ namespace Ecommerce
             }
         }
 
+        protected void AddToCartButton_Click(object sender, EventArgs e)
+        {
+            Button btnAddToCart = (Button)sender;
+            string[] args = btnAddToCart.CommandArgument.Split('|');
+
+            string productId = args[0];
+            string productName = args[1];
+            decimal productPrice = decimal.Parse(args[2]);
+
+            Product selectedProduct = new Product
+            {
+                ProductID = productId,
+                ImagePath = ResolveUrl("~/Images/" + productId + ".jpg"),
+                Name = productName,
+                Description = "Breve descrizione dell'articolo " + productId,
+                Price = productPrice
+            };
+
+            AddProductToCart(selectedProduct);
+        }
+
         // Metodo di esempio per ottenere la lista dei prodotti (puoi modificare questo metodo in base alla tua logica)
         private List<Index.Product> GetProducts()
         {
@@ -51,6 +72,15 @@ namespace Ecommerce
             };
 
             return products;
+        }
+
+        private void AddProductToCart(Product product)
+        {
+            List<Product> cart = Session["Cart"] as List<Product> ?? new List<Product>();
+
+            cart.Add(product);
+
+            Session["Cart"] = cart;
         }
     }
 }

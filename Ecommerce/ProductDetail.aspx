@@ -3,18 +3,26 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form runat="server">
         <div class="container">
-            <h2>Dettagli Prodotto</h2>
+            <h2 class="text-danger">Dettagli Prodotto</h2>
             <div class="card mb-4 shadow-sm">
                 <div class="row">
                     <div class="col-md-4">
                         <asp:Image runat="server" ID="ProductImage" CssClass="card-img-top" />
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body">
-                            <asp:Label runat="server" class="card-title" ID="ProductNameLabel"></asp:Label>
-                            <asp:Label runat="server" class="card-text" ID="ProductPriceLabel"></asp:Label>
-                            <asp:Label runat="server" class="card-text" ID="ProductDescriptionLabel"></asp:Label>
-                            <%--<asp:Button runat="server" ID="AddToCartButton" Text="Aggiungi al carrello" CssClass="btn btn-primary" OnClick="AddToCartButton_Click" />--%>
+                        <div class="card-body h-100 justify-content-around">
+                            <div>
+                                <div class="col-md-12">
+                                    <asp:Label runat="server" class="card-title" ID="ProductNameLabel"></asp:Label>
+                                </div>
+                                <div class="col-md-12">
+                                    <asp:Label runat="server" class="card-text" ID="ProductPriceLabel"></asp:Label>
+                                </div>
+                                <div class="col-md-12">
+                                    <asp:Label runat="server" class="card-text" ID="ProductDescriptionLabel"></asp:Label>
+                                </div>
+                            </div>
+                            <asp:Button runat="server" ID="AddToCartButton" Text="Aggiungi al carrello" CssClass="btn btn-primary" OnClick="AddToCartButton_Click" CommandArgument='<%# Eval("ProductID") + "|" + Eval("Name") + "|" + Eval("Price") %>' />
                         </div>
                     </div>
                 </div>
@@ -22,3 +30,5 @@
         </div>
     </form>
 </asp:Content>
+
+

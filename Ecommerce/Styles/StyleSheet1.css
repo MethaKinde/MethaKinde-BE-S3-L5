@@ -1,0 +1,23 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Young+Serif&display=swap');
+
+body {
+    background-color: #313033;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    font-family: Young serif;
+    margin: 40px 0px;
+}
+
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: start;
+}

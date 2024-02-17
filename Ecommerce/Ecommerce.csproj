@@ -76,6 +76,7 @@
     <Content Include="images\image6.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="ProductDetail.aspx" />
+    <Content Include="Styles\StyleSheet1.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
