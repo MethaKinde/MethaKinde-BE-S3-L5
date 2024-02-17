@@ -33,15 +33,6 @@ namespace Ecommerce
         protected global::System.Web.UI.WebControls.Label ProductNameLabel;
 
         /// <summary>
-        /// Controllo ProductPriceLabel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ProductPriceLabel;
-
-        /// <summary>
         /// Controllo ProductDescriptionLabel.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,51 @@ namespace Ecommerce
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label ProductDescriptionLabel;
+
+        /// <summary>
+        /// Controllo ProductBrandLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ProductBrandLabel;
+
+        /// <summary>
+        /// Controllo ProductMaterialeLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ProductMaterialeLabel;
+
+        /// <summary>
+        /// Controllo ProductManicaLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ProductManicaLabel;
+
+        /// <summary>
+        /// Controllo ProductPaeseLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ProductPaeseLabel;
+
+        /// <summary>
+        /// Controllo ProductPriceLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ProductPriceLabel;
 
         /// <summary>
         /// Controllo AddToCartButton.

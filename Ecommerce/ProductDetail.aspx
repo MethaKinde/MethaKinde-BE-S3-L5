@@ -16,13 +16,25 @@
                                     <asp:Label runat="server" class="card-title" ID="ProductNameLabel"></asp:Label>
                                 </div>
                                 <div class="col-md-12">
-                                    <asp:Label runat="server" class="card-text" ID="ProductPriceLabel"></asp:Label>
-                                </div>
-                                <div class="col-md-12">
                                     <asp:Label runat="server" class="card-text" ID="ProductDescriptionLabel"></asp:Label>
                                 </div>
+                                <div class="col-md-12">
+                                    <asp:Label runat="server" class="card-text" ID="ProductBrandLabel"></asp:Label>
+                                </div>
+                                <div class="col-md-12">
+                                    <asp:Label runat="server" class="card-text" ID="ProductMaterialeLabel"></asp:Label>
+                                </div>
+                                <div class="col-md-12">
+                                    <asp:Label runat="server" class="card-text" ID="ProductManicaLabel"></asp:Label>
+                                </div>
+                                <div class="col-md-12">
+                                    <asp:Label runat="server" class="card-text" ID="ProductPaeseLabel"></asp:Label>
+                                </div>
+                                <div class="col-md-12">
+                                    <asp:Label runat="server" class="card-text" ID="ProductPriceLabel"></asp:Label>
+                                </div>
                             </div>
-                            <asp:Button runat="server" ID="AddToCartButton" Text="Aggiungi al carrello" CssClass="btn btn-primary" OnClick="AddToCartButton_Click" CommandArgument='<%# Eval("ProductID") + "|" + Eval("Name") + "|" + Eval("Price") %>' />
+                            <asp:Button runat="server" ID="AddToCartButton" Text="Aggiungi al carrello" CssClass="btn btn-primary" OnClick="AddToCartButton_Click" />
                         </div>
                     </div>
                 </div>

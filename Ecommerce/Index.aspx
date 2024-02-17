@@ -14,7 +14,7 @@
                                 <p class="card-text"><%# Eval("Description") %></p>
                                 <p class="card-text">Prezzo: <%# Eval("Price") %> €</p>
                                 <div>
-                                    <asp:Button runat="server" ID="AddToCartButton" Text="Aggiungi al carrello" CssClass="btn btn-primary" OnClick="AddToCartButton_Click" CommandArgument='<%# Eval("ProductID") + "|" + Eval("Name") + "|" + Eval("Price") %>' />
+                                    <asp:Button runat="server" ID="AddToCartButton" Text="Aggiungi al carrello" CssClass="btn btn-primary" OnClick="AddToCartButton_Click"  />
                                     <asp:Button runat="server" ID="ViewDetailsButton" Text="Vedi dettagli" CssClass="btn btn-warning" OnClick="ViewDetailsButton_Click" CommandArgument='<%# Eval("ProductID") %>' />
                                 </div>
                             </div>

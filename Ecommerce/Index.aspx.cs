@@ -17,6 +17,10 @@ namespace Ecommerce
             public string Name { get; set; }
             public string Description { get; set; }
             public decimal Price { get; set; }
+            public string Brand { get; set; }
+            public string Materiale { get; set; }
+            public string Manica { get; set; }
+            public string Paese {  get; set; } 
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -43,7 +47,11 @@ namespace Ecommerce
                 ImagePath = ResolveUrl("~/Images/" + productId + ".jpg"),
                 Name = productName,
                 Description = "Breve descrizione dell'articolo " + productId,
-                Price = productPrice
+                Price = productPrice,
+                Brand = "Brand articolo" + productId,
+                Materiale = "Materiale 1" + productId,
+                Manica = "Lunghezza manica" + productId,
+                Paese = "Paese prodotto" + productId
             };
 
             AddProductToCart(selectedProduct);
